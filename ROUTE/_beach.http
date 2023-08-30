@@ -1,0 +1,14 @@
+POST HTTP://localhost:9090/beach/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Matosinhos Beach",
+    "type": "Point Break",
+    "location": "Matosinhos, Porto, Portugal",
+    "level": "Intermedio",
+    "image": "pskfrpe"
+}
+
+####
+
+http://localhost:9090/beach
