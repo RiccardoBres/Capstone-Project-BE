@@ -13,6 +13,7 @@ const UserRoute = require('./ROUTE/UserRoute');
 const BeachRoute = require('./ROUTE/BeachRoute');
 const LoginRoute = require('./ROUTE/LoginRoute');
 
+
 app.use('/', SchoolRoute);
 app.use('/', UserRoute);
 app.use('/', BeachRoute);

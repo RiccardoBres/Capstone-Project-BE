@@ -1,0 +1,14 @@
+POST http://localhost:9090/beach/64f62497ac2f55598e1cce28/comment HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwic3VybmFtZSI6IkJyZXNvbGluICIsImJpcnRoZGF5IjoiMTUvMTIvMjAyMyIsImF2YXRhciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiYWNjaXVwZS9pbWFnZS91cGxvYWQvdjE2OTM4NDc3MTIvYXZhdGFyL2F5d240amVzbm5zN3E0cGV5ZTVhLnBuZyIsInR5cGUiOiJQZXJzb25hIiwiaWF0IjoxNjkzOTM1NzE0LCJleHAiOjE2OTQwMjIxMTR9.Q7Y37oWYvybJylvTFFJheQFvMRKNbhWVbhYQQ0LVffw
+
+
+{   "user": "64f6109ed4a0c16a694c569e",
+    "content": "Ottima spiaggia"
+}
+
+####
+GET  http://localhost:9090/beach/64f61124d4a0c16a694c56ae/comments
+
+####
+DELETE  http://localhost:9090/comment/64fb724e84b78d4b2d45d37d
