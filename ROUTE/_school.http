@@ -1,6 +1,5 @@
 POST HTTP://localhost:9090/school/create HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwic3VybmFtZSI6IkJyZXNvbGluICIsImJpcnRoZGF5IjoiMTUvMTIvMjAyMyIsImF2YXRhciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiYWNjaXVwZS9pbWFnZS91cGxvYWQvdjE2OTM1MTMzMzgvYXZhdGFyL3Jrb3RoZ3R3eW5yeWR6cmZyNGU4LnBuZyIsInR5cGUiOiJQZXJzb25hIiwiaWF0IjoxNjkzNTg1MzU3LCJleHAiOjE2OTM2NzE3NTd9.ydV6RKw3BoS0AfXR4q5cYEnMgGV48WO7qYV53EOejIY
 
 {
     "name": "tec",
@@ -10,7 +9,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwi
     "description":"",
     "email": "rrobliberoo.it",
     "password":"Suii",
-    "rate": 5
 }
 
 ####

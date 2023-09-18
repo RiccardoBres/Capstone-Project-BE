@@ -1,6 +1,6 @@
 POST HTTP://localhost:9090/beach/create HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwic3VybmFtZSI6IkJyZXNvbGluICIsImJpcnRoZGF5IjoiMTUvMTIvMjAyMyIsImF2YXRhciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiYWNjaXVwZS9pbWFnZS91cGxvYWQvdjE2OTM4NDc3MTIvYXZhdGFyL2F5d240amVzbm5zN3E0cGV5ZTVhLnBuZyIsInR5cGUiOiJQZXJzb25hIiwiaWQiOiI2NGY2MTA5ZWQ0YTBjMTZhNjk0YzU2OWUiLCJpYXQiOjE2OTQ0MzIxOTcsImV4cCI6MTY5NDUxODU5N30.RbfSkETy0oc6ME0FCJFz2fjdjQWMtE6HNapUH4PtYdY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwic3VybmFtZSI6IkJyZXNvbGluICIsImJpcnRoZGF5IjoiMTUvMTIvMjAyMyIsImF2YXRhciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiYWNjaXVwZS9pbWFnZS91cGxvYWQvdjE2OTQ3MDEwMzAvYXZhdGFyL3Myc3ljb2FmOG5xZ21md2F1bHJiLnBuZyIsInR5cGUiOiJQZXJzb25hIiwiaWQiOiI2NTAzMTVlNTUyMmI4ZTY0YWVhMTk3NjQiLCJpYXQiOjE2OTQ3NzgyODIsImV4cCI6MTY5NDg2NDY4Mn0.YD6VixLeptmcxo5cUhu8sjF4V7IVK13jIBVCkcotdXI
 
 {
     "name": "Matosinhos",
@@ -8,7 +8,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwi
     "location": "Matosinhos, Porto, France",
     "level": "Intermedio",
     "image": "https://tse3.mm.bing.net/th?id=OIP.lxUl3RyawfXGf5JwEK5VoAHaE9&pid=Api&P=0&h=180",
-    "user": "64f4b0a0f5665018725d8d94"
+    "user": "650315e5522b8e64aea19764"
 }
 
 ####

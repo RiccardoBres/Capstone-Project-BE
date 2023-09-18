@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const BeachModel = require('../MODELS/BeachModel');
 const UserModel = require('../MODELS/UserModel');
 const CommentModel = require('../MODELS/CommentModel');
-const VerifyToken = require('../MIDDLEWARE/VerifyToken')
+const VerifyToken = require('../MIDDLEWARE/VerifyToken');
+const BeachImage = require('../MIDDLEWARE/UploadBeachImage')
 
 
 const router = express.Router();
@@ -31,7 +32,7 @@ router.get('/beach', async (req, res) => {
     }
 });
 
-router.post('/beach/create', VerifyToken, async (req, res) => {
+router.post('/beach/create', VerifyToken, BeachImage.single("image"), async (req, res) => {
     const users = await UserModel.findOne({ _id: req.body.user });
     if (!users) {
         return res.status(404).send({
@@ -45,7 +46,7 @@ router.post('/beach/create', VerifyToken, async (req, res) => {
         type: req.body.type,
         location: req.body.location,
         level: req.body.level,
-        image: req.body.image,
+        image: req.file.path,
         user: users._id,
     });
 

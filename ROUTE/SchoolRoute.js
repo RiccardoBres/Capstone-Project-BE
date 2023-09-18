@@ -2,15 +2,19 @@ const express = require('express');
 const mongoose = require('mongoose');
 const SchoolModel = require('../MODELS/SchoolModel');
 const bcrypt = require('bcrypt');
-const VerifyToken = require('../MIDDLEWARE/VerifyToken')
+const VerifyToken = require('../MIDDLEWARE/VerifyToken');
+const SchoolImage = require('../MIDDLEWARE/UploadSchoolImage');
 
 const router = express.Router();
 
 
 
 router.get('/school', async (req, res) => {
+    const { page = 1, pageSize = 10 } = req.query;
     try {
-        const school = await SchoolModel.find().populate("user", "name level image");
+        const school = await SchoolModel.find()
+        .limit(pageSize)
+        .skip((page - 1) * pageSize);
         const totalSchools = await SchoolModel.count();
         res.status(200).send({
             statusCode: 200,
@@ -18,6 +22,7 @@ router.get('/school', async (req, res) => {
             totalSchools: totalSchools,
         })
     } catch (error) {
+        console.log(error);
         res.status(500).send({
             statusCode: 500,
             message: "Internal server error",
@@ -25,8 +30,33 @@ router.get('/school', async (req, res) => {
         })
     }
 })
+router.get('/school/location', async (req, res) => {
+    const { page = 1, pageSize = 10, location } = req.query;
 
-router.post('/school/create', VerifyToken, async (req, res) => {
+    try {
+        const schools = await SchoolModel.find({ location })
+            .limit(pageSize)
+            .skip((page - 1) * pageSize);
+
+        const totalSchools = await SchoolModel.count({ location });
+
+        res.status(200).send({
+            statusCode: 200,
+            schools,
+            totalSchools,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            statusCode: 500,
+            message: "Internal server error",
+            error,
+        });
+    }
+});
+
+
+router.post('/school/create',SchoolImage.single("image"), async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -35,25 +65,25 @@ router.post('/school/create', VerifyToken, async (req, res) => {
         name: req.body.name,
         address: req.body.address,
         location: req.body.location,
-        image: req.body.image,
+        image: req.file.path,
         description: req.body.description,
         email: req.body.email,
         password: hashedPassword,
-        rate: req.body.rate
     })
     try {
         const school = await newSchool.save();
         res.status(201).send({
             statusCode: 201,
-            message: "Post saved successfully",
+            message: "School saved successfully",
             payload: school,
         })
     } catch (error) {
+        console.error(error); 
         res.status(500).send({
             statusCode: 500,
             message: "Internal server error",
-            error
-        })
+            error: error.message, 
+        });
     }
 })
 

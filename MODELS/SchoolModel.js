@@ -30,15 +30,6 @@ const SchoolModelScheme = new mongoose.Schema({
         type: String,
         required: true
     },
-    rate: {
-        type: Number,
-        required: false,
-    },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      }
-
 },{timestamps: true, strict:true});
 
 module.exports = mongoose.model('School', SchoolModelScheme, 'schools')
