@@ -13,8 +13,8 @@ router.get('/school', async (req, res) => {
     const { page = 1, pageSize = 10 } = req.query;
     try {
         const school = await SchoolModel.find()
-        .limit(pageSize)
-        .skip((page - 1) * pageSize);
+            .limit(pageSize)
+            .skip((page - 1) * pageSize);
         const totalSchools = await SchoolModel.count();
         res.status(200).send({
             statusCode: 200,
@@ -34,11 +34,11 @@ router.get('/school/location', async (req, res) => {
     const { page = 1, pageSize = 10, location } = req.query;
 
     try {
-        const schools = await SchoolModel.find({ location })
+        const schools = await SchoolModel.find({ location: location.replace(/_/g, ' ') })
             .limit(pageSize)
             .skip((page - 1) * pageSize);
 
-        const totalSchools = await SchoolModel.count({ location });
+        const totalSchools = await SchoolModel.count({ location: location.replace(/_/g, ' ') });
 
         res.status(200).send({
             statusCode: 200,
@@ -56,7 +56,7 @@ router.get('/school/location', async (req, res) => {
 });
 
 
-router.post('/school/create',SchoolImage.single("image"), async (req, res) => {
+router.post('/school/create', SchoolImage.single("image"), async (req, res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -78,16 +78,16 @@ router.post('/school/create',SchoolImage.single("image"), async (req, res) => {
             payload: school,
         })
     } catch (error) {
-        console.error(error); 
+        console.error(error);
         res.status(500).send({
             statusCode: 500,
             message: "Internal server error",
-            error: error.message, 
+            error: error.message,
         });
     }
 })
 
-router.delete('/school/:id',VerifyToken, async (req, res) => {
+router.delete('/school/:id', VerifyToken, async (req, res) => {
     const { id } = req.params;
 
     try {
