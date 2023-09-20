@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ####
-GET HTTP://localhost:9090/school/location?location=Matosinhos,%20Porto,%20Portogallo
+GET HTTP://localhost:9090/school/64daa785a59995e9f101c231
 
 ####
 

@@ -54,6 +54,32 @@ router.get('/school/location', async (req, res) => {
         });
     }
 });
+router.get('/school/:id', async (req, res) => {
+    const { id } = req.params; 
+
+    try {
+        const schoolById = await SchoolModel.findById(id);
+
+        if (!schoolById) {
+            return res.status(404).send({
+                statusCode: 404,
+                message: "School not found",
+            });
+        }
+
+        res.status(200).send({
+            statusCode: 200,
+            school: schoolById, 
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({
+            statusCode: 500,
+            message: "Internal Server Error",
+            error,
+        });
+    }
+});
 
 
 router.post('/school/create', SchoolImage.single("image"), async (req, res) => {
