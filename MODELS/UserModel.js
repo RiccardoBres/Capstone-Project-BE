@@ -26,12 +26,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    type: {
-        type: String,
-        required: true,
-        enum: ['Persona', 'Scuola', 'Membro'],
-        default: 'Membro'
-    },
     beach: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Beach",

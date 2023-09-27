@@ -10,11 +10,8 @@ const BeachImage = require('../MIDDLEWARE/UploadBeachImage')
 const router = express.Router();
 
 router.get('/beach', async (req, res) => {
-    const { page = 1, pageSize = 10 } = req.query;
     try {
         const beaches = await BeachModel.find()
-            .limit(pageSize)
-            .skip((page - 1) * pageSize)
             .populate("user", "name surname avatar")
             .populate("comment", "content");
         const totalBeaches = await BeachModel.count();

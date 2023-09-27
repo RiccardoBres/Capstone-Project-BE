@@ -57,7 +57,6 @@ router.post('/user/create', UserImage.single("avatar"), async (req, res) => {
         password: hashedPassword,
         birthday: req.body.birthday,
         avatar: req.file.path,
-        type: req.body.type,
     });
     try {
         const users = await newUser.save();
@@ -74,5 +73,8 @@ router.post('/user/create', UserImage.single("avatar"), async (req, res) => {
         });
     }
 });
+
+
+
 
 module.exports = router;

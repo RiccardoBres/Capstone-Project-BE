@@ -1,13 +1,12 @@
 POST HTTP://localhost:9090/beach/create HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwic3VybmFtZSI6IkJyZXNvbGluICIsImJpcnRoZGF5IjoiMTUvMTIvMjAyMyIsImF2YXRhciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiYWNjaXVwZS9pbWFnZS91cGxvYWQvdjE2OTQ3MDEwMzAvYXZhdGFyL3Myc3ljb2FmOG5xZ21md2F1bHJiLnBuZyIsInR5cGUiOiJQZXJzb25hIiwiaWQiOiI2NTAzMTVlNTUyMmI4ZTY0YWVhMTk3NjQiLCJpYXQiOjE2OTQ3NzgyODIsImV4cCI6MTY5NDg2NDY4Mn0.YD6VixLeptmcxo5cUhu8sjF4V7IVK13jIBVCkcotdXI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljY2FyZG8gIiwic3VybmFtZSI6IkJyZXNvbGluICIsImJpcnRoZGF5IjoiMTUvMTIvMjAyMyIsImF2YXRhciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RiYWNjaXVwZS9pbWFnZS91cGxvYWQvdjE2OTQ3MDEwMzAvYXZhdGFyL3Myc3ljb2FmOG5xZ21md2F1bHJiLnBuZyIsInR5cGUiOiJQZXJzb25hIiwiaWQiOiI2NTAzMTVlNTUyMmI4ZTY0YWVhMTk3NjQiLCJpYXQiOjE2OTU4MTY1MTEsImV4cCI6MTY5NTkwMjkxMX0.vwR9OFzuByPEiWbXSMoSej2fl9_281g7bVwyDIaYohg
 
 {
-    "name": "Matosinhos",
+    "name": "Leça da Palmeira ",
     "type": "Beach break",
-    "location": "Matosinhos, Porto, France",
+    "location": "Porto, Portugal",
     "level": "Intermedio",
-    "image": "https://tse3.mm.bing.net/th?id=OIP.lxUl3RyawfXGf5JwEK5VoAHaE9&pid=Api&P=0&h=180",
     "user": "650315e5522b8e64aea19764"
 }
 
